@@ -48,4 +48,9 @@ public class DriveBase extends CS_SubsystemBase {
     public double getSpeed() {
         return (rightSpeed + leftSpeed) / 2;
     }
+
+    @Override
+    public void updateDashboard() {
+        this.println(" updateDashboard() called");
+    }
 }

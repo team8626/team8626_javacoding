@@ -11,19 +11,21 @@ public class Robot {
     private String name;
     private DriveBase driveBase;
     private ArmIO arm;
+    private Dashboard dashboard;
 
     public enum RobotType {
         KITBOT, DEVBOT, COMPBOT, SIMBOT;
     }
 
     // Change this to the desired robot type
-    public static final RobotType myRobotType = RobotType.KITBOT;
+    public static final RobotType myRobotType = RobotType.COMPBOT;
 
     // Constructor
     public Robot(String name) {
         this.name = name;
-        this.driveBase = new DriveBase();
+        this.dashboard = new Dashboard();
 
+        this.driveBase = new DriveBase();
         switch (myRobotType) {
             case KITBOT:
                 this.arm = new ArmSimple(20 /* in */);
@@ -40,15 +42,18 @@ public class Robot {
             default:
                 throw new IllegalArgumentException("Invalid robot type: " + myRobotType);
         }
-        // this.arm = new SimpleArm(20 /* in */);
-        this.arm = new ArmDouble(20 /* in */, 10 /* in */);
-
         System.out.println("Robot has been created");
     }
 
     // Method to introduce the robot
     public void introduce() {
         System.out.println("Hello, I am " + name + ", class " + this.getClass().getSimpleName().toUpperCase());
+    }
+
+    public void periodic() {
+        // Periodic function logic
+        System.out.println("Periodic function called");
+        dashboard.periodic();
     }
 
     public void run(){
@@ -79,15 +84,15 @@ public class Robot {
                     break;
                 case 'q':
                     System.out.println("--- Exiting...");
-                    break;
+                    System.exit(0); // Stop program execution
                 case 'w':
                     arm.setHeight(arm.getHeight() + 1);
                     System.out.printf("--- (+) Height: %.1f in, Reach: %.1f\n", arm.getHeight(), arm.getReach());
-                break;
+                    break;
                 case 's':
                     arm.setHeight(arm.getHeight() - 1);
                     System.out.printf("--- (-) Height: %.1f in, Reach: %.1f\n", arm.getHeight(), arm.getReach());
-                break;   
+                  break;   
                 default:
                     System.out.println("--- Invalid input");
                     break;

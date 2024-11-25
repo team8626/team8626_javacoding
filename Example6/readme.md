@@ -1,12 +1,14 @@
-## Createa Dashboard Class
-    This is responsible of displayiong status of sybsystems. 
+## What's next
+    We want to havce real time update of the intervals of all subsystems
+    --> In Main.java add a scheduler each second calling for a Dashboard update
+    --> Add a Dashboard class.
 
-## Problems
-    Running the same code on different targets is complicated. 
-    Everytime the code need to be modified to know which robot we are building
+## Dashboard Class
+    Need to know the subsystems --> registration system
+    this will be called periodically and update the dashboard on the defined interval.
 
-        - TEST Robot
-        - DEV Robot
-        - Simulation
+## CS_SubsystemBase
+    Add abstract updateDashboard() method to force all subsystems to implement it
 
-        --> Example5: interfaces
+    example 7: implementation of all subsystems updating all values
+    

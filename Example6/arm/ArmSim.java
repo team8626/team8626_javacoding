@@ -1,6 +1,6 @@
 package Example6.arm;
 
-import Example5.CS_SubsystemBase;
+import Example6.CS_SubsystemBase;
 
 // public class SimpleArm {
 public class ArmSim extends CS_SubsystemBase implements ArmIO{
@@ -12,7 +12,7 @@ public class ArmSim extends CS_SubsystemBase implements ArmIO{
         // Implicit call to super() here
         this.shoulderAngle = 0.0;
         this.armLength = armLength;
-        this.println("Runniong Simulation");
+        this.println("Running Simulation");
     }
 
     @Override
@@ -34,4 +34,8 @@ public class ArmSim extends CS_SubsystemBase implements ArmIO{
         throw new UnsupportedOperationException("Unimplemented method 'setHeight'");
     }
 
+    @Override
+    public void updateDashboard() {
+        this.println(" updateDashboard() called");
+    }
 }

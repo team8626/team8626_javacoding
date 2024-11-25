@@ -1,6 +1,6 @@
 package Example6.arm;
 
-import Example5.CS_SubsystemBase;
+import Example6.CS_SubsystemBase;
 
 // public class DualArm {
 public class ArmDouble extends CS_SubsystemBase implements ArmIO{
@@ -11,6 +11,7 @@ public class ArmDouble extends CS_SubsystemBase implements ArmIO{
 
     // Constructor
     public ArmDouble(double upperArmLength, double forearmLength) {
+        super();
         this.shoulderAngle = 0.0;
         this.elbowAngle = 0.0;
         this.armLength = upperArmLength;
@@ -48,5 +49,10 @@ public class ArmDouble extends CS_SubsystemBase implements ArmIO{
         double upperaemReach = armLength * Math.cos(Math.toRadians(shoulderAngle));
         double forearmExtraReach = forearmLength * Math.cos(Math.toRadians(shoulderAngle + elbowAngle));
         return upperaemReach + forearmExtraReach;
+    }
+
+    @Override
+    public void updateDashboard() {
+        this.println(" updateDashboard() called");
     }
 }

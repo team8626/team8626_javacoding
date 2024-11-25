@@ -1,10 +1,11 @@
 package Example6;
 
-public class CS_SubsystemBase {
+public abstract class CS_SubsystemBase {
 
     private String className = "";
 
     public CS_SubsystemBase() {
+        Dashboard.registerSubsystem(this);
         className = this.getClass().getSimpleName().toUpperCase();
         System.out.println("[" + className + "] Instantiated");
     }
@@ -28,4 +29,11 @@ public class CS_SubsystemBase {
     protected void println(String string) {
         this.printf(string);
     } 
+    
+    /**
+     * Abstract method to update the Dashboard.
+     * Subclasses must implement this method.
+     */
+    public abstract void updateDashboard();
+        
 }

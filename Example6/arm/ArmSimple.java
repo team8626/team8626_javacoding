@@ -1,6 +1,6 @@
 package Example6.arm;
 
-import Example5.CS_SubsystemBase;
+import Example6.CS_SubsystemBase;
 
 // public class SimpleArm {
 public class ArmSimple extends CS_SubsystemBase implements ArmIO{
@@ -31,5 +31,10 @@ public class ArmSimple extends CS_SubsystemBase implements ArmIO{
     // Method to get the reach of the top of the arm
     public double getReach() {
         return armLength * Math.cos(Math.toRadians(shoulderAngle));
+    }
+
+    @Override
+    public void updateDashboard() {
+        this.println(" updateDashboard() called");
     }
 }
