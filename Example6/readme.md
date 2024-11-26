@@ -1,4 +1,4 @@
-## What's next
+### Introducing periodic calls and Dashboard
     We want to havce real time update of the intervals of all subsystems
     --> In Main.java add a scheduler each second calling for a Dashboard update
     --> Add a Dashboard class.
@@ -10,5 +10,4 @@
 ## CS_SubsystemBase
     Add abstract updateDashboard() method to force all subsystems to implement it
 
-    example 7: implementation of all subsystems updating all values
     

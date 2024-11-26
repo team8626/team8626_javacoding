@@ -2,14 +2,12 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
 
-import Example7.Robot;
+import Example1.Robot;
 
 public class Main {
     public static void main(String[] args) {
-        System.out.println("Hello, World!");
-
         // Instantiate the Robot class
-        Robot myRobot = new Robot("R2D2");
+        Robot myRobot = new Robot("MyRobot");
         myRobot.introduce();
 
         // Create a ScheduledExecutorService to call the periodic function every 2 seconds

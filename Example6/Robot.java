@@ -52,7 +52,7 @@ public class Robot {
 
     public void periodic() {
         // Periodic function logic
-        System.out.println("Periodic function called");
+        // System.out.println("Periodic function called");
         dashboard.periodic();
     }
 
@@ -98,6 +98,5 @@ public class Robot {
                     break;
             }
         }
-
     }
 }
