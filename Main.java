@@ -11,10 +11,10 @@ public class Main {
         myRobot.introduce();
 
         // Create a ScheduledExecutorService to call the periodic function every 2 seconds
-        ScheduledExecutorService scheduler = Executors.newScheduledThreadPool(1);
-        scheduler.scheduleAtFixedRate(() -> {
-            myRobot.periodic();
-        }, 0, 200, TimeUnit.MILLISECONDS);
+        // ScheduledExecutorService scheduler = Executors.newScheduledThreadPool(1);
+        // scheduler.scheduleAtFixedRate(() -> {
+        //     myRobot.periodic();
+        // }, 0, 200, TimeUnit.MILLISECONDS);
 
         // Run the robot...
         myRobot.run();
